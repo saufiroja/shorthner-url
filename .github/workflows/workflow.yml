@@ -16,12 +16,14 @@ jobs:
           node-version: '14.x'
       - name: Install dependencies
         run: npm install
+      - name: narkdown/render-with-ejs
+      - uses: narkdown/render-with-ejs@v0.1.1
   deploy:
     runs-on: ubuntu-latest
     needs: [build]
     steps:
       - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.12.12
+      - uses: CDNievas/heroku-action@v1.0
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
