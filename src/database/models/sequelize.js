@@ -8,6 +8,9 @@ const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASS, {
   dialect: 'postgres',
   logging: false,
   timezone: '+08:00',
+  dialectOptions: {
+    ssl: true,
+  },
   pool: {
     max: 5,
     min: 0,
