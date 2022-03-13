@@ -16,8 +16,6 @@ jobs:
           node-version: '14.x'
       - name: Install dependencies
         run: npm install
-      - name: narkdown/render-with-ejs
-      - uses: narkdown/render-with-ejs@v0.1.1
   deploy:
     runs-on: ubuntu-latest
     needs: [build]
