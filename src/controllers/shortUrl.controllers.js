@@ -11,7 +11,7 @@ const home = async (req, res, next) => {
 
 const createShortUrl = async (req, res, next) => {
   try {
-    const { full } = req.body;
+    const full = req.body.fullUrl;
     await ShortUrl.create({
       full,
     });
